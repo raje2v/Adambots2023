@@ -45,15 +45,18 @@ public class Robot extends TimedRobot {
     Log.instance();
     Log.setFilter(Level.OFF);
     
-    if (Robot.isReal() && false) {
+    if (Robot.isReal()) {
+
       // Starts vision thread only if not running in simulation mode
       // Vision System calculates the angle to the target and posts it to the NetworkTable
+      
+      // Uncomment to start Vision Processing
       // vision = new VisionProcessorSubsystem(RobotMap.RingLight, new HubGripPipeline());
       // visionThread = vision.getVisionThread();
       // visionThread.setDaemon(true);
       // visionThread.start();
-    }
-    else{
+     
+      // Camera Feed Only - No Image Processing
       visionThread = new CameraSubsystem(RobotMap.RingLight).getVisionThread();
       visionThread.start();
     }
@@ -84,7 +87,7 @@ public class Robot extends TimedRobot {
     // robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    
+    m_robotContainer.updateDashboard();
   }
 
   /**

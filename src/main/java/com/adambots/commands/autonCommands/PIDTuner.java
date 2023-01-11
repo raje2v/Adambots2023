@@ -55,7 +55,7 @@ public class PIDTuner extends PIDCommand {
     // Set the controller tolerance - the delta tolerance ensures the robot is
     // stationary at the
     // setpoint before it is considered as having reached the reference
-    getController().setTolerance(AutoConstants.GYRO_TOLERANCE); // , Constants.GYRO_RATE_TOLERANCE_DEG_PER_SEC);
+    getController().setTolerance(AutoConstants.kGyroTolerance); // , Constants.GYRO_RATE_TOLERANCE_DEG_PER_SEC);
   }
 
   @Override

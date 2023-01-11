@@ -28,7 +28,7 @@ public class Lidar extends BaseSensor {
         if (_source == null){
             
             System.out.println("Initializing Lidar");
-            _source = new DigitalInput(OIConstants.LIDAR_DIO); // although this brings in depency, using setDevice this can be overwritten before calling getInstance
+            _source = new DigitalInput(OIConstants.kLidarDio); // although this brings in depency, using setDevice this can be overwritten before calling getInstance
         }
 
 		System.out.println("Source: " + _source);
